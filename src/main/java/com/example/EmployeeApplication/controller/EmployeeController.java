@@ -30,7 +30,7 @@ public class EmployeeController {
 	public Object saveEmployeeDetails(@RequestBody Employee employee) {
 		
 		System.out.println("Employee Details....!");
-		System.out.println(employee.getEmployeeId());
+		System.out.println("employee Id :: "+employee.getEmployeeId());
 		System.out.println(employee.getName());
 		System.out.println(employee.getCompany());
 		System.out.println(employee.getLocation());
