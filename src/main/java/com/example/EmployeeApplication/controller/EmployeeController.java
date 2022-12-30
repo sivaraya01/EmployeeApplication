@@ -21,7 +21,7 @@ public class EmployeeController {
 		employee.setCompany("Virtusa");
 		employee.setLocation("Bangalore");
 		
-		System.out.println("Employee name is :: "+employee.getName());//Employee name is :: Siva
+		System.out.println("Employee name is : "+employee.getName());//Employee name is :: Siva
 		
 		return employee;
 	}
