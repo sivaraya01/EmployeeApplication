@@ -21,7 +21,7 @@ public class EmployeeController {
 		employee.setCompany("Virtusa");
 		employee.setLocation("Bangalore");
 		
-		System.out.println("Employee name is : "+employee.getName());//Employee name is :: Siva
+		System.out.println("Employee name is :: "+employee.getName());//Employee name is :: Siva
 		
 		return employee;
 	}
@@ -31,8 +31,8 @@ public class EmployeeController {
 		
 		System.out.println("Employee Details....!");
 		System.out.println("employee Id :: "+employee.getEmployeeId());
-		System.out.println("Employee name :: "+employee.getName());
-		System.out.println(employee.getCompany());
+		System.out.println("employee name::" +employee.getName());
+		System.out.println("employee company ::"+employee.getCompany());
 		System.out.println(employee.getLocation());
 		return "Employee Details Saved Successfully..";
 	}
