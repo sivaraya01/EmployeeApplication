@@ -31,7 +31,7 @@ public class EmployeeController {
 		
 		System.out.println("Employee Details....!");
 		System.out.println("employee Id :: "+employee.getEmployeeId());
-		System.out.println(employee.getName());
+		System.out.println("Employee name :: "+employee.getName());
 		System.out.println(employee.getCompany());
 		System.out.println(employee.getLocation());
 		return "Employee Details Saved Successfully..";
