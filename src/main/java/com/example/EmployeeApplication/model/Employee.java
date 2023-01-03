@@ -1,7 +1,13 @@
 package com.example.EmployeeApplication.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+
+@Entity
 public class Employee {
-	
+	@Id
 	private int employeeId;
 	private String name;
 	private String company;
