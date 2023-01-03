@@ -21,11 +21,10 @@ public class EmployeeController {
 		employee.setCompany("Virtusa");
 		employee.setLocation("Bangalore");
 		
-		System.out.println("Employee name is :: "+employee.getName());//Employee name is :: Siva
+		System.out.println("Employee name is :: "+employee.getName());
 		
 		return employee;
 	}
-	
 	@PostMapping(path="/saveEmployee",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Object saveEmployeeDetails(@RequestBody Employee employee) {
 		
