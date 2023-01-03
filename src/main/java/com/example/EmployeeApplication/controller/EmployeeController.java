@@ -2,6 +2,7 @@ package com.example.EmployeeApplication.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,19 +12,22 @@ import com.example.EmployeeApplication.model.Employee;
 @RestController
 public class EmployeeController {
 	
-	@GetMapping("/getEmployee")
-	public Employee getEmployeeDetails() {
+//	@Autowired
+//	EmployeeRepository employeeRepository;
+	
+	@GetMapping("/getEmployee/{id}")
+	public Employee getEmployeeDetails(@PathVariable int id) {
 		System.out.println("GET Employee Method Started....");
 		
-		Employee employee=new Employee();
-		employee.setEmployeeId(123);
-		employee.setName("Siva");
-		employee.setCompany("Virtusa");
-		employee.setLocation("Bangalore");
+	//	Optional<Employee> employeeData=employeeRepository.findById(id);
+		//Employee employee=employeeData.get();
+	//	System.out.println("Employee name is :: "+employee.getName());//Employee name is :: Siva
 		
-		System.out.println("Employee name is :: "+employee.getName());
+		//System.out.println("Employee name is :: "+employee.getName());
 		
 		return employee;
+	//	return employee;
+		return null;
 	}
 	@PostMapping(path="/saveEmployee",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Object saveEmployeeDetails(@RequestBody Employee employee) {
@@ -33,6 +37,7 @@ public class EmployeeController {
 		System.out.println("employee name::" +employee.getName());
 		System.out.println("employee company ::"+employee.getCompany());
 		System.out.println(employee.getLocation());
+	//	employeeRepository.save(employee);
 		return "Employee Details Saved Successfully..";
 	}
 	
