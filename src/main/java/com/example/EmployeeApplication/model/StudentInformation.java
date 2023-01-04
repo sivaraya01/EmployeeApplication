@@ -5,6 +5,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class StudentInformation{
+public static Object save;
 @Id
   private int studentRollNO;
   private String Name;
@@ -34,6 +35,10 @@ public String getAddress() {
 public void setAddress(String address) {
 	Address = address;
 
+}
+public void save(StudentInformation student) {
+	// TODO Auto-generated method stub
+	
 }
 	
 }
