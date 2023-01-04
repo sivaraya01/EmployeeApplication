@@ -1,6 +1,11 @@
 package com.example.EmployeeApplication.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class StudentInformation{
+@Id
   private int studentRollNO;
   private String Name;
   private String Stream;
