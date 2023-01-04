@@ -23,10 +23,12 @@ public class EmployeeController {
 		//Employee employee=employeeData.get();
 	//	System.out.println("Employee name is :: "+employee.getName());//Employee name is :: Siva
 		
+		//System.out.println("Employee name is :: "+employee.getName());
+		
+		//return employee;
 	//	return employee;
 		return null;
 	}
-	
 	@PostMapping(path="/saveEmployee",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Object saveEmployeeDetails(@RequestBody Employee employee) {
 		

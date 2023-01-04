@@ -1,15 +1,15 @@
 package com.example.EmployeeApplication.model;
 
 public class Department {
-	private int DepartmentId;
+	private int departmentId;
 	private String name;
-	private int Strength;
-	private int Subjects;
+	private int strength;
+	private int subjects;
 	public int getDepartmentId() {
-		return DepartmentId;
+		return departmentId;
 	}
 	public void setDepartmentId(int departmentId) {
-		DepartmentId = departmentId;
+		this.departmentId = departmentId;
 	}
 	public String getName() {
 		return name;
@@ -18,19 +18,18 @@ public class Department {
 		this.name = name;
 	}
 	public int getStrength() {
-		return Strength;
+		return strength;
 	}
 	public void setStrength(int strength) {
-		Strength = strength;
+		this.strength = strength;
 	}
 	public int getSubjects() {
-		return Subjects;
+		return subjects;
 	}
 	public void setSubjects(int subjects) {
-		Subjects = subjects;
+		this.subjects = subjects;
 	}
 	
-
 	
 
 }
