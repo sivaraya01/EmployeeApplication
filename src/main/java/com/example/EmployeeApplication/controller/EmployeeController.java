@@ -1,5 +1,8 @@
 package com.example.EmployeeApplication.controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,19 +23,16 @@ public class EmployeeController {
 	@GetMapping("/getEmployee/{id}")
 	public Employee getEmployeeDetails(@PathVariable int id) {
 		System.out.println("GET Employee Method Started....");
-		
-		Employee employee=employeeRepository.getById(id);
-	
+		Optional<Employee> optionlaData=null;
+		Employee employee=null;
+		try {
+		optionlaData=employeeRepository.findById(id);
+		employee=optionlaData.get();
+		}catch (Exception e) {
+			System.err.println("Exception Occured :: "+e.getMessage());
+		} 
 		return employee;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	@PostMapping(path="/saveEmployee",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Object saveEmployeeDetails(@RequestBody Employee employee) {
 		
@@ -43,6 +43,14 @@ public class EmployeeController {
 		System.out.println(employee.getLocation());
 		employeeRepository.save(employee);
 		return "Employee Details Saved Successfully..";
+	}
+	
+	@GetMapping("/getEmployees")
+	public List<Employee> getEmployees(){
+		
+		List<Employee> employeeList=employeeRepository.findAll();
+		
+		return employeeList;
 	}
 	
 }
