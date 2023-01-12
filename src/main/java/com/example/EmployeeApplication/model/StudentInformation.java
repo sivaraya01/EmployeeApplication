@@ -8,9 +8,16 @@ public class StudentInformation{
 public static Object save;
 @Id
   private int studentRollNO;
-  private String Name;
-  private String Stream;
-  private String Address;
+   private String name;
+   private String stream;
+   private String address;
+	
+  public static Object getSave() {
+	return save;
+}
+public static void setSave(Object save) {
+	StudentInformation.save = save;
+}
 public int getStudentRollNO() {
 	return studentRollNO;
 }
@@ -18,31 +25,26 @@ public void setStudentRollNO(int studentRollNO) {
 	this.studentRollNO = studentRollNO;
 }
 public String getName() {
-	return Name;
+	return name;
 }
 public void setName(String name) {
-	Name = name;
+	this.name = name;
 }
 public String getStream() {
-	return Stream;
+	return stream;
 }
 public void setStream(String stream) {
-	Stream = stream;
+	this.stream = stream;
 }
 public String getAddress() {
-	return Address;
+	return address;
 }
 public void setAddress(String address) {
-	Address = address;
+	this.address = address;
+}
+}
+	
 
-}
-public void save(StudentInformation student) {
-	// TODO Auto-generated method stub
-	
-}
-	
-}
-	
 
 	
 
