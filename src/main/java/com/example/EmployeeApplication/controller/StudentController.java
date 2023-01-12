@@ -1,10 +1,16 @@
 package com.example.EmployeeApplication.controller;
 
+import java.util.List;
+import java.util.Optional;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.RepositoryDefinition;
 import org.springframework.data.repository.config.RepositoryConfigurationUtils;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,10 +28,19 @@ public class StudentController {
 
 	
 //@GetMapping(path="/getStudentrecord",produces="application/json")	
-	@GetMapping("/getStudentRecord/{id}")
-    public StudentInformation getStudentInformation() {
+	@GetMapping("/getStudentrecord/{id}")
+	  
+	public  StudentInformation  getInformation(@PathVariable int id)
 	
+	{
 		System.out.println("get student record.......");
+		Optional<StudentInformation> OptionalData=null;
+		StudentInformation student=null;
+		try {
+     OptionalData =  studentInformationRepository.findById(id);
+		}catch (Exception e) {
+			System.err.println("exception occurs ::"+ e.getMessage());
+		}
 		
 	//	Student student = studentinformation
 	//	StudentInformation student = new StudentInformation();
@@ -36,13 +51,11 @@ public class StudentController {
 		  
 	//	System.out.println("student name is ::"+student.getName());
 		
-	//	return student;
-		return null;
+		return student;
 }
-
 	
-@PostMapping("/saveinformation")
-
+@PostMapping(path ="/saveInformation", consumes= MediaType.APPLICATION_JSON_VALUE)
+ 
 public Object saveStudentInformation(@RequestBody StudentInformation student) {
 	
 
@@ -60,7 +73,15 @@ public Object saveStudentInformation(@RequestBody StudentInformation student) {
   return "student Information successfully added.....";
 }
   
-  
+  @GetMapping("/getStudentInformation")
+   public List<StudentInformation> getStudentInformation()
+  {
+	  
+	  List<StudentInformation> studentList = studentInformationRepository.findAll();
+	  
+	  return studentList;
+	  
+  }
 
 	
 }
